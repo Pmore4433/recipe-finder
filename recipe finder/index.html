@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/RecipeLogo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Recipe Finder</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Your Search Result: </h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/paneer-roll.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Paneer Roll</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/aloo-tikki.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Aloo-Tikki</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/pancake.jpg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Pancake</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Omelette.webp">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Omelette</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/sandwitch.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Sandwitch</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Gulabjamun.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Gulabjamun</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/panipuri.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Panipuri</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Burger.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Chicken Burger</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/maggie.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Maggi</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/pav-bhaji.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Pav-Bhaji</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/samosa.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Samosa</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">paneer-roll</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">A paneer roll is a popular Indian street food that features spiced paneer (Indian cottage cheese) wrapped in a flatbread, typically a roti or paratha. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1.Paneer (cubed or sliced)
+                            <br>2.Onions (sliced)
+                            <br>3.Bell peppers (sliced)
+                            <br>4.Tomatoes (optional, chopped)
+                            <br>5.Ginger-garlic paste
+                            <br>6.Green chilies (optional, finely chopped)
+                            <br>7.Spices: cumin seeds, turmeric powder, red chili powder, garam masala, coriander powder, salt
+                            <br>8.Fresh coriander leaves (chopped)
+                            <br>9.Lemon juice (optional)
+                            <br>10.Roti or paratha (store-bought or homemade)
+                            <br>11.Green chutney or mint chutney
+                            <br>12.Chaat masala
+                            <br>13.Fresh vegetables (like sliced onions, cucumbers, and tomatoes)
+                     </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.Heat oil in a pan and add cumin seeds. Let them sizzle.
+                            <br>2.Add sliced onions and sauté until they turn golden brown.
+                            <br>3.Add ginger-garlic paste and green chilies, and sauté for another minute.
+                            <br>4.Add bell peppers and tomatoes (if using) and cook until they soften.
+                            <br>5.Add spices (turmeric, red chili powder, garam masala, coriander powder, salt) and mix well.
+                            <br>6.Add paneer cubes and cook for a few minutes until they are well coated with the spices and heated through.
+                            <br>7.Add chopped coriander leaves and a squeeze of lemon juice, if desired. Mix well and set aside.
+                            <br>8.Heat the roti or paratha on a tawa (griddle) until it's warm and slightly crispy.
+                            <br>9.Spread a layer of green chutney or mint chutney on the roti/paratha.
+                            <br>10.Place a portion of the paneer filling in the center.
+                            <br>11.Sprinkle some chaat masala on top.
+                            <br>12.Add fresh sliced vegetables if desired.
+                            <br>13.Roll the roti/paratha tightly around the filling, tucking in the sides as you go.
+                            <br>14.Serve the paneer roll hot with extra chutney or sauce on the side.</p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/paneer-roll.jpg" alt = "">
+                      </div>
+                </div>
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Aloo-Tikki</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Aloo Tikki is a popular North Indian snack made from boiled potatoes, spices, and herbs, formed into patties and shallow-fried until golden and crispy. It's a versatile dish that can be served as a standalone snack, in chaats (Indian street food salads), or as a patty in burgers. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>4-5 medium-sized potatoes (boiled and mashed)
+                            <br>1-2 green chilies (finely chopped)
+                            <br>1-inch piece of ginger (grated)
+                            <br>1 small onion (finely chopped)
+                            <br>Fresh coriander leaves (chopped)
+                            <br>1 teaspoon cumin seeds,chaat masala,garam masala
+                            <br>2-3 tablespoons cornflour or bread crumbs (for binding)
+                            <br>Salt to taste
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.In a mixing bowl, combine the mashed potatoes, green chilies, grated ginger, chopped onions, and fresh coriander leaves.
+                            <br>2. Add the cumin seeds, chaat masala, garam masala, coriander powder, red chili powder, and salt. Mix well to combine all the ingredients.
+                            <br>3. Add cornflour or bread crumbs to the mixture. This helps in binding the tikkis and prevents them from breaking while frying.
+                            <br>4. Divide the mixture into equal portions and shape each portion into a round patty. If you want to make stuffed tikkis, flatten a portion of the potato mixture in your hand, place a small amount of filling in the center (such as peas or paneer), and then bring the edges together to enclose the filling and form a patty.
+                            <br>5. Heat oil in a skillet or frying pan over medium heat.
+                            <br>6. Place the tikkis in the pan and cook until golden brown and crispy on both sides. This usually takes about 3-4 minutes per side.
+                            <br>7.Remove the tikkis from the pan and place them on paper towels to absorb any excess oil.
+                            <br>8. Serve hot. Share and enjoy!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/aloo-tikki.jpg" alt = "">
+                      </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Pancake</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Pancakes are a popular breakfast food made from a simple batter of flour, milk, eggs, and a leavening agent such as baking powder. They are cooked on a griddle or frying pan and served with a variety of toppings such as butter, syrup, fruit, or whipped cream.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 cup all-purpose flour
+                            <br>2 tablespoons sugar
+                            <br>1 tablespoon baking powder
+                            <br>1/2 teaspoon salt
+                            <br>1 cup milk
+                            <br>1 large egg
+                            <br>2 tablespoons melted butter (plus more for cooking)
+                            <br>1 teaspoon vanilla extract (optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. In a large bowl, whisk together the flour, sugar, baking powder, and salt.
+                            <br>2. In another bowl, whisk together the milk, egg, melted butter, and vanilla extract (if using).
+                            <br>3. Pour the wet ingredients into the dry ingredients and stir until just combined. It's okay if the batter is a little lumpy; overmixing can make the pancakes tough.
+                            <br>5. Heat a non-stick griddle or frying pan over medium heat and lightly grease it with butter or oil.
+                            <br>6. Pour about 1/4 cup of batter onto the griddle for each pancake.
+                            <br>7. Cook until bubbles form on the surface of the pancake and the edges start to look set, about 2-3 minutes.
+                            <br>8.Flip the pancake and cook until the other side is golden brown, about 1-2 minutes more.
+                            <br>9.Repeat with the remaining batter, greasing the griddle as needed.
+                            <br>10. Serve. Share and enjoy!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/pancake.jpg" alt = "">
+                      </div>
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Omelette</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">In cuisine, an omelette is a dish made from beaten eggs, fried with butter or oil in a frying pan. It is quite common for the omelette to be folded around fillings such as chives, vegetables, mushrooms, meat, cheese, onions or some combination of the above. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>3 eggs, beaten
+                            <br>1 tsp sunflower oil
+                            <br>1 tsp butter
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Beat the eggs: Use two or three eggs per omelette, depending on how hungry you are. Beat the eggs lightly with a fork.
+                            <br>2. Melt the butter: Use an 8-inch nonstick skillet for a 2-egg omelette, a 9-inch skillet for 3 eggs. Melt the butter over medium-low heat, and keep the temperature low and slow when cooking the eggs so the bottom doesn’t get too brown or overcooked.
+                            <br>3. Add the eggs: Let the eggs sit for a minute, then use a heatproof silicone spatula to gently lift the cooked eggs from the edges of the pan. Tilt the pan to allow the uncooked eggs to flow to the edge of the pan.
+                            <br>4. Fill the omelette: Add the filling—but don’t overstuff the omelette—when the eggs begin to set. Cook for a few more seconds
+                            <br>5. Fold and serve: Fold the omelette in half. Slide it onto a plate with the help of a silicone spatula.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Omelette.webp" alt = "">
+                      </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Sandwitch</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">A sandwich is a versatile and convenient meal that consists of fillings placed between slices of bread. They can be as simple or as elaborate as you like, ranging from basic peanut butter and jelly to gourmet creations.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 slices of whole wheat bread
+                            <br>4-6 slices of turkey breast
+                            <br>1/2 avocado (sliced)
+                            <br>1 tomato (sliced)
+                            <br>Lettuce leaves
+                            <br>1-2 tablespoons mayonnaise or mustard
+                            <br>Salt and pepper to taste
+                            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.Toast the bread slices if desired.
+                            <br>2.Slice the avocado and tomato.
+                            <br>3.Spread mayonnaise or mustard on one side of each slice of bread.
+                            <br>4.Layer the turkey slices on one slice of bread.
+                            <br>5.Add the sliced avocado, tomato, and lettuce leaves on top of the turkey.
+                            <br>6.Season with salt and pepper.
+                            <br>7.Place the other slice of bread on top, with the mayonnaise or mustard side facing down.
+                            <br>8.Cut the sandwich in half if desired and serve with a side of chips, pickles, or a salad.
+                            <br>9. Serve hot. Share and enjoy!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/sandwitch.webp" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Gulabjamun</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Gulab Jamun is a classic Indian dessert made from milk solids, which are shaped into balls, deep-fried, and soaked in a sugar syrup flavored with cardamom and rose water or saffron. It's a beloved sweet treat enjoyed during festivals, celebrations, and special occasions.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 cup khoya (mawa or dried milk solids)
+                            <br>1/4 cup all-purpose flour (maida)
+                            <br>1/4 teaspoon baking powder
+                            <br>2-3 tablespoons milk (or as needed)
+                            <br>A pinch of cardamom powder
+                            <br>Ghee or oil for deep frying
+                            <br>2 cups sugar
+                            <br>1 1/2 cups water
+                            <br>4-5 cardamom pods (crushed)
+                            <br>A few saffron strands (optional)
+                            <br>1-2 teaspoons rose water (optional)
+                            <br>1 teaspoon lemon juice (to prevent crystallization)
+
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.In a large saucepan, combine the sugar and water. Heat the mixture over medium heat, stirring until the sugar dissolves.
+                            <br>2.Add the crushed cardamom pods, saffron strands (if using), and bring the syrup to a boil.
+                            <br>3.Reduce the heat and let it simmer for about 5-7 minutes until it slightly thickens.
+                            <br>4.Add the lemon juice and rose water (if using), and stir well. Keep the syrup warm.
+                            <br>5.In a mixing bowl, grate or crumble the khoya until it's fine and smooth.
+                            <br>6.Add the all-purpose flour, baking powder, and cardamom powder to the khoya. Mix well.
+                            <br>7.Gradually add milk, a little at a time, and knead the mixture into a soft, smooth dough. The dough should be moist but not sticky.
+                            <br>8.Divide the dough into small equal-sized portions and roll each portion into a smooth ball. Ensure there are no cracks on the surface.
+                            <br>9.You can grease your hands with a little ghee or oil to help shape the balls.
+                            <br>10.Heat ghee or oil in a deep frying pan over low to medium heat. The oil should be moderately hot, not smoking.
+                            <br>11.Gently slide the dough balls into the hot oil, a few at a time. Fry them on low heat, stirring gently, until they turn golden brown all over. This may take about 7-8 minutes.
+                            <br>12.Remove the fried balls with a slotted spoon and drain on paper towels.
+                            <br>13.While the fried balls are still warm, transfer them to the warm sugar syrup.
+                            <br>14.Let the Gulab Jamun soak in the syrup for at least 2-3 hours. They will absorb the syrup and become soft and spongy.
+                            <br>15.Serve the Gulab Jamun warm or at room temperature, garnished with chopped nuts or saffron strands if desired.
+
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Gulabjamun.jpg" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Panipuri</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">ani Puri, also known as Golgappa or Puchka in different regions of India, is a popular street food known for its burst of flavors and textures. It consists of crispy hollow puris filled with spicy, tangy, and sweet flavored water, tamarind chutney, chickpeas, potatoes, and sometimes sprouts. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 cup mint leaves
+                            <br>1/2 cup coriander leaves
+                            <br>2 green chilies
+                            <br>1-inch piece of ginger
+                            <br>1 teaspoon roasted cumin powder
+                            <br>1 teaspoon chaat masala
+                            <br>1/2 teaspoon black salt
+                            <br>Salt to taste
+                            <br>1/2 cup tamarind pulp
+                            <br>3-4 cups cold water
+                            <br>Ice cubes (optional)
+                            <br>2-3 boiled potatoes (mashed)
+                            <br>1 cup boiled chickpeas
+                            <br>Salt to taste
+                            <br>Red chili powder (optional)
+                            <br>Chaat masala (optional)
+                            <br>Tamarind chutney (optional)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. In a blender, combine mint leaves, coriander leaves, green chilies, and ginger. Blend into a smooth paste.
+                            <br>2.In a large bowl, mix the mint-coriander paste with tamarind pulp, roasted cumin powder, chaat masala, black salt, and regular salt.
+                            <br>3.Add cold water to the mixture and stir well. Adjust the seasoning according to taste. You can add ice cubes to keep the water cold.
+                            <br>4. In a bowl, mix mashed potatoes and boiled chickpeas. Season with salt, red chili powder, and chaat masala if desired.
+                            <br>5.You can also add some tamarind chutney to the filling for extra flavor.
+                            <br>6.Gently tap the center of each puri to make a small hole.
+                            <br>7.Fill each puri with a small amount of the potato-chickpea mixture.
+                            <br>8.Add a little tamarind chutney if desired.
+                            <br>9.Dip the filled puri into the prepared pani (flavored water) and eat immediately.
+                            
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/panipuri.jpg" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Chicken Burger</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Prepare the buns! For the ideal stuffing for juicy burgers, coat or marinate chicken thighs and breast. Dig it after adding toppings like slaw and sauce along with your selected side dishes.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>3 boneless chicken breasts (around half a kg)
+                            <br>1 tspn of pepper
+                            <br>1 tspn of salt
+                            <br>2 tblspns of worcestershire sauce
+                            <br>1 tspn of Mustard powder or all spice powder
+                            <br>2 tblspns of Flour
+                            <br>1 Egg
+                            <br>1 1/2 cups of Breadcrumbs
+                            <br>Soft seeded burger buns
+                            <br>Mayonnaise or KFC Zinger Sauce
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. If your chicken breasts are too big, slice them before cooking. Then, marinade the chicken breasts in the Worcestershire sauce, pepper, salt, mustard, or all-spice powder. Leave the chicken for at least four hours or over night.
+                            <br>2. An egg and two tablespoons of water should be beaten together to make the batter, which should then be set aside.
+                            <br>3. Chicken breasts that have been marinated should be heavily dusted in flour. They should be well coated after being dipped in both the egg and the breadcrumbs.
+                            <br>4. The coated chicken breasts should be deep-fried in heated oil over a medium-high heat until they are crisp and golden brown.
+                            <br>5. The finished burger should be stacked with the lettuce on top, followed by the chicken, and then the mayonnaise or KFC zinger sauce. The buns should be cut in half and lightly toasted. If you'd like a cheesy kick, add some sliced American cheese.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Burger.webp" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Maggi</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Maggi is an iconic instant noodle brand that has become a staple comfort food in many households, especially in India. Known for its quick preparation and delicious taste, Maggi noodles can be made in various ways to suit different tastes. 
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 packet Maggi noodles
+                            <br>1 1/2 cups water
+                            <br>The tastemaker spice packet that comes with the Maggi noodles
+                            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.In a saucepan, bring 1 1/2 cups of water to a boil.
+                           <br>2.Add the Maggi noodles to the boiling water and cook for 2 minutes.
+                           <br>3.Add the tastemaker spice mix that comes with the Maggi packet and stir well.
+                           <br>4.Cook for another 1-2 minutes until the noodles are cooked and the water is mostly absorbed, creating a saucy consistency.
+                           <br>5.Transfer the cooked Maggi noodles to a bowl and serve hot.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/maggie.jpg" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Pav-Bhaji</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Pav Bhaji is a popular Indian street food consisting of a spicy vegetable mash (bhaji) served with buttered and toasted bread rolls (pav). It originated in Mumbai and is now enjoyed across India and beyond.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 large potatoes (boiled and mashed)
+                            <br>1 cup cauliflower (finely chopped)
+                            <br>1 cup green peas (boiled)
+                            <br>1 large onion (finely chopped)
+                            <br>1 large tomato (finely chopped)
+                            <br>1 green bell pepper (finely chopped)
+                            <br>1 tablespoon ginger-garlic paste
+                            <br>2-3 green chilies (finely chopped)
+                            <br>2 tablespoons Pav Bhaji masala
+                            <br>1 teaspoon turmeric powder
+                            <br>1 teaspoon red chili powder
+                            <br>1 teaspoon cumin seeds
+                            <br>Salt to taste
+                            <br>2-3 tablespoons butter
+                            <br>1 tablespoon oil
+                            <br>Fresh coriander leaves (chopped, for garnish)
+                            <br>Lemon wedges (for garnish)
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Boil the potatoes, cauliflower, and green peas until soft. Drain and set aside.
+                            <br>2.Mash the boiled potatoes and cauliflower together. Keep the peas whole.  
+                            <br>3. Heat oil and 1 tablespoon butter in a large pan over medium heat. Add cumin seeds and let them splutter.
+                            <br>4.Add the chopped onions and sauté until golden brown.
+                            <br>5.Add the ginger-garlic paste and green chilies, and sauté for another minute until the raw smell disappears.
+                            <br>6.Add the chopped tomatoes and cook until they turn soft and mushy.
+                            <br>7.Add the chopped bell pepper and cook for another 2-3 minutes.
+                            <br>8.Add the mashed potatoes, cauliflower, and green peas to the pan. Mix well.
+                            <br>9.Add Pav Bhaji masala, turmeric powder, red chili powder, and salt. Mix everything together.
+                            <br>10.Using a potato masher or the back of a spoon, mash the vegetables in the pan to combine them well and achieve a smooth, thick consistency.
+                            <br>11.Add a little water if needed to adjust the consistency. Let it simmer for 10-15 minutes, stirring occasionally.
+                            <br>12.Add 1-2 tablespoons of butter towards the end and mix well. Garnish with fresh coriander leaves.
+                            <br>13.Serve the hot bhaji on a plate, garnished with a dollop of butter, fresh coriander leaves, and a squeeze of lemon juice.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/pav-bhaji.webp" alt = "">
+                      </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Samosa</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Samosa is a popular savory snack from India, consisting of a crispy pastry filled with spiced potatoes, peas, and sometimes other ingredients like minced meat or lentils. It's typically triangular or cone-shaped and deep-fried until golden and crunchy. Samosas are enjoyed as a snack or appetizer and are often served with chutneys or sauces.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 cups all-purpose flour (maida)
+                            <br>1/4 cup oil or ghee (clarified butter)
+                            <br>Water (for kneading)
+                            <br>1/2 teaspoon salt
+                            <br>3-4 medium potatoes (boiled, peeled, and mashed)
+                            <br>1/2 cup green peas (boiled)
+                            <br>1 small onion (finely chopped)
+                            <br>1 green chili (finely chopped)
+                            <br>1 teaspoon ginger-garlic paste
+                            <br>1/2 teaspoon cumin seeds
+                            <br>1/2 teaspoon mustard seeds
+                            <br>1/2 teaspoon turmeric powder
+                            <br>1 teaspoon coriander powder
+                            <br>1/2 teaspoon garam masala
+                            <br>1/2 teaspoon red chili powder (adjust to taste)
+                            <br>Salt to taste
+                            <br>Fresh coriander leaves (chopped)
+                            <br>Oil for deep frying
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Using a spoon, create 4 to 6 holes (depenIn a mixing bowl, combine the all-purpose flour and salt.
+                            <br>2.Add oil or ghee and rub it into the flour mixture until it resembles breadcrumbs.
+                            <br>3.Gradually add water, a little at a time, and knead into a firm dough. Cover with a damp cloth and let it rest for 30 minutes.
+                            <br>4.Heat oil in a pan over medium heat. Add cumin seeds and mustard seeds. Let them splutter.
+                            <br>5.Add chopped onions and sauté until they turn translucent.
+                            <br>6.Add ginger-garlic paste and green chili, and sauté for another minute until the raw smell disappears.
+                            <br>7.Add turmeric powder, coriander powder, red chili powder, and salt. Mix well.
+                            <br>8.Add boiled and mashed potatoes along with boiled green peas. Mix everything together.
+                            <br>9.Add garam masala and chopped fresh coriander leaves. Stir well and cook for 2-3 minutes. Remove from heat and let the filling cool completely.
+                            <br>10.Divide the dough into equal-sized balls and roll each ball into a thin oval or round shape (about 6-7 inches in diameter).
+                            <br>11.Cut each rolled-out dough into halves to make semi-circles.
+                            <br>12.Take one semi-circle, fold it into a cone shape, and seal the edge with a little water.
+                            <br>13.Stuff the cone with 1-2 tablespoons of the prepared filling.
+                            <br>14.Seal the open edge of the cone to form a triangular shape. Ensure the samosa is sealed tightly to prevent the filling from leaking during frying.
+                            <br>15.Heat oil in a deep frying pan or kadhai over medium heat.
+                            <br>16.Once the oil is hot, carefully slide in 2-3 samosas at a time, depending on the size of your pan.
+                            <br>17.Fry the samosas on low to medium heat until they turn golden brown and crispy on all sides, turning occasionally. This usually takes about 8-10 minutes per batch.
+                            <br>18.Remove the fried samosas using a slotted spoon and drain on paper towels to remove excess oil.
+                            <br>19.Serve the hot samosas with tamarind chutney, mint chutney, or ketchup.
+                            
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/samosa.jpg " alt = "">
+                      </div>
+                </div>
+            </div> 
+            
+            
+        </div>
+            <!--Ending of Recipe Details-->
+
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="https://www.facebook.com/Cmedsss" target="_blank" ><i class="	fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/tiaanmeds/" target="_blank" ><i class="	fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/tianmeds/" target="_blank"><i class="	fab fa-linkedin"></i></a>
+            <a href="https://github.com/TianMeds" target="_blank" "><i class="	fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>designed by Mitali And Pratiksha</p>  
+    </div>
+
+    <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="./assets/index.js"></script>
+</body>
+</html>
